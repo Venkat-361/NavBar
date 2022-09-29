@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button mat-button color="basic" routerLink="BookCart">
+    <mat-icon>book</mat-icon>BookCart
+  </button>
+  <form novalidate class="ng-untouched ng-pristine ng-valid">
+    <input type="search" aria-label="search" placeholder="Search books or authors"
+      class="mat-autocomplete-trigger searchbox ng-valid ng-dirty ng-touched" autocomplete="off" role="combobox"
+      aria-autocomplete="list" aria-expanded="false" aria-haspopup="true">
+    <mat-autocomplete class="mat-autocomplete"></mat-autocomplete>
+  </form>
+  <div class="spacer"></div>
+  <button mat-icon-button color="white" routerLink="wishlist">
+    <mat-icon matBadge="{{total.length}}" matBadgeColor="warn">favorite</mat-icon>
+  </button>
+  
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle
+    </mat-icon> user <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="MyOrders">MyOrders</button>
+    <button mat-menu-item routerLink="LogOut">LogOut</button>
+  </mat-menu>
+</mat-toolbar>
